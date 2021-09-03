@@ -2,3 +2,5 @@
 .sass-cache/
 build/
 target/
+
+liferay-journal-article-migrator.iml
