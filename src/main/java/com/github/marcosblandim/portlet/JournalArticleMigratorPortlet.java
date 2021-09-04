@@ -1,12 +1,18 @@
 package com.github.marcosblandim.portlet;
 
 import com.github.marcosblandim.constants.JournalArticleMigratorPortletKeys;
-
+import com.liferay.dynamic.data.mapping.model.DDMStructure;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import org.osgi.service.component.annotations.Component;
 
 import javax.portlet.Portlet;
-
-import org.osgi.service.component.annotations.Component;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * @author marco
@@ -26,4 +32,14 @@ import org.osgi.service.component.annotations.Component;
 	service = Portlet.class
 )
 public class JournalArticleMigratorPortlet extends MVCPortlet {
+	@Override
+	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
+		List<DDMStructure> journalArticleStructures = List.of();
+
+		renderRequest.setAttribute("journalArticleStructures", journalArticleStructures);
+		super.doView(renderRequest, renderResponse);
+	}
+
+	private static final Log _log = LogFactoryUtil.getLog(
+			JournalArticleMigratorPortlet.class);
 }
