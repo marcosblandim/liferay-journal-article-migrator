@@ -10,7 +10,7 @@
 <%@ page import="com.liferay.portal.kernel.workflow.WorkflowConstants" %>
 <%@ page import="javax.portlet.PortletURL" %>
 <%@ page import="com.liferay.petra.string.StringPool" %>
-<%@ page import="com.github.marcosblandim.JournalArticleUtil" %>
+<%@ page import="com.github.marcosblandim.util.JournalArticleUtil" %>
 <%@ page import="com.liferay.journal.constants.JournalFolderConstants" %>
 <%@ include file="../init.jsp" %>
 
@@ -59,7 +59,7 @@
     >
         <liferay-ui:search-container-results
                 results="<%= JournalFolderLocalServiceUtil.getFolders(scopeGroupId, folderId, searchContainer.getStart(),
-        searchContainer.getEnd()) %>"
+                searchContainer.getEnd()) %>"
         />
 
         <liferay-ui:search-container-row

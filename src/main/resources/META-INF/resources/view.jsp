@@ -20,7 +20,7 @@
                helpMessage="import-file-help-message" required="<%= true %>"/>
 
     <aui:select name="journal-article-structure" helpMessage="journal-article-structure-help-message" required="<%= true %>">
-        <aui:option label="select" value="" disabled="<%= false %>" selected="<%= true %>" />
+        <aui:option label="select" value="" disabled="<%= true %>" selected="<%= true %>" />
 
         <c:forEach items="${journalArticleStructures}" var="journalArticleStructure" >
             <aui:option label="${journalArticleStructure.getName(locale)}" value="${journalArticleStructure.getStructureId()}" />
