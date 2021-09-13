@@ -9,7 +9,9 @@
 
 
 <liferay-ui:error key="internal-server-error" message="internal-server-error"/>
-<liferay-ui:error key="invalid-form-input" message="invalid-form-input"/>
+<liferay-ui:error key="invalid-form-input">
+    <liferay-ui:message key="invalid-form-input" arguments="${invalidInputName}"/>
+</liferay-ui:error>
 <%-- TODO: inform which input is invalid --%>
 <liferay-ui:success key="imported-successfully" message="imported-successfully"/>
 
@@ -19,7 +21,7 @@
     <aui:input name="import-file" type="file" accept="application/JSON"
                helpMessage="import-file-help-message" required="<%= true %>"/>
 
-    <aui:select name="journal-article-structure" helpMessage="journal-article-structure-help-message" required="<%= true %>">
+    <aui:select name="structure-id" helpMessage="structure-id-help-message" required="<%= true %>">
         <aui:option label="select" value="" disabled="<%= true %>" selected="<%= true %>" />
 
         <c:forEach items="${journalArticleStructures}" var="journalArticleStructure" >
